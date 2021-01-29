@@ -8,6 +8,7 @@ Original file is located at
 """
 
 import nltk
+import re
 nltk.download('all')
 
 def tokenization(cropus,sentences=True,words=True):
@@ -68,3 +69,11 @@ lemmatization(text,True)
 
 lemmatization(x,False)
 
+def remove_pun(corpus):
+    w=corpus
+    w=re.sub("[^a-zA-Z]", " ",str(w))
+    return w
+
+def lower(corpus):
+    w=corpus
+    return w.lower()
